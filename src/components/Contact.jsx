@@ -24,18 +24,40 @@ export default function Contact() {
     return Object.keys(errs).length === 0
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (!validate()) return
 
     setStatus('sending')
 
-    // Simulate sending delay for UI effect
-    setTimeout(() => {
-      setStatus('success')
-      setForm({ name: '', email: '', message: '' })
-      setTimeout(() => setStatus(null), 5000)
-    }, 1500)
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          access_key: "520454ee-7e2d-4479-a74a-7681a83e9e57",
+          name: form.name,
+          email: form.email,
+          message: form.message
+        })
+      })
+
+      const result = await response.json()
+      if (result.success) {
+        setStatus('success')
+        setForm({ name: '', email: '', message: '' })
+      } else {
+        setStatus('error')
+      }
+    } catch (err) {
+      console.error("Submission Error:", err)
+      setStatus('error')
+    }
+    
+    setTimeout(() => setStatus(null), 5000)
   }
 
   const handleChange = (e) => {
