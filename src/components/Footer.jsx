@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion'
 import { FiGithub, FiLinkedin, FiMail, FiInstagram, FiHeart } from 'react-icons/fi'
+import { SiLeetcode } from 'react-icons/si'
 
 const links = [
   { icon: <FiGithub />, href: 'https://github.com/amanrazz07', label: 'GitHub' },
   { icon: <FiLinkedin />, href: 'https://www.linkedin.com/in/aman-kumar-btech/', label: 'LinkedIn' },
   { icon: <FiInstagram />, href: 'https://www.instagram.com/aman_razz07/', label: 'Instagram' },
   { icon: <FiMail />, href: 'mailto:arazz5349@gmail.com', label: 'Email' },
+  { icon: <SiLeetcode />, href: 'https://leetcode.com/u/amanrazz01/', label: 'LeetCode' },
 ]
 
 export default function Footer() {

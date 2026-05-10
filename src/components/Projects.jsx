@@ -246,7 +246,7 @@ export default function Projects() {
     <section
       id="projects"
       className="relative"
-      style={{ paddingTop: '8rem', paddingBottom: '8rem' }}
+      style={{ paddingTop: '3.5rem', paddingBottom: '3rem' }}
     >
       <div className="section-container relative z-10" ref={ref}>
         <SectionHeading
@@ -255,14 +255,14 @@ export default function Projects() {
         />
 
         {/* Featured — side by side */}
-        <div className="flex flex-col lg:flex-row gap-6" style={{ marginTop: '4rem' }}>
+        <div className="flex flex-col lg:flex-row gap-6" style={{ marginTop: '2.5rem' }}>
           {projects.map((p, i) => (
             <FeaturedCard key={p.title} project={p} index={i} inView={inView} />
           ))}
         </div>
 
         {/* Divider */}
-        <div className="flex items-center gap-6" style={{ marginTop: '4rem', marginBottom: '2rem' }}>
+        <div className="flex items-center gap-6" style={{ marginTop: '2.5rem', marginBottom: '1.5rem' }}>
           <div className="flex-1 h-[1px]" style={{ background: 'rgba(255,255,255,0.05)' }} />
           <span className="text-text-muted text-xs tracking-widest uppercase font-medium">More Projects</span>
           <div className="flex-1 h-[1px]" style={{ background: 'rgba(255,255,255,0.05)' }} />
@@ -281,7 +281,7 @@ export default function Projects() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.6 }}
           className="flex justify-center"
-          style={{ marginTop: '3rem' }}
+          style={{ marginTop: '2rem' }}
         >
           <a
             href="https://github.com/amanrazz07?tab=repositories"

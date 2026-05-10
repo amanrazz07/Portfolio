@@ -21,7 +21,7 @@ const timeline = [
     icon: <SiLeetcode />,
     stats: [
       { value: '400+', label: 'Solved' },
-      { value: '1600+', label: 'Rating' },
+      { value: '1550+', label: 'Rating' },
     ],
   },
   {
@@ -143,7 +143,7 @@ export default function Experience() {
     <section
       id="experience"
       className="relative"
-      style={{ paddingTop: '8rem', paddingBottom: '8rem' }}
+      style={{ paddingTop: '3.5rem', paddingBottom: '3rem' }}
     >
       <div className="section-container relative z-10" ref={ref}>
         <SectionHeading
@@ -152,7 +152,7 @@ export default function Experience() {
         />
 
         {/* Clean vertical timeline — left-aligned */}
-        <div className="max-w-3xl mx-auto" style={{ marginTop: '4rem' }}>
+        <div className="max-w-3xl mx-auto" style={{ marginTop: '2.5rem' }}>
           {timeline.map((item, i) => (
             <TimelineItem key={i} item={item} index={i} inView={inView} />
           ))}

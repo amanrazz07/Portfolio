@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
 import { FiArrowRight, FiMail, FiGithub, FiLinkedin } from 'react-icons/fi'
+import BallpitBackground from './BallpitBackground'
 
 export default function Hero() {
   return (
@@ -8,10 +9,13 @@ export default function Hero() {
       id="hero"
       className="hero-bg relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Orbs */}
-      <div className="orb orb-1" />
-      <div className="orb orb-2" />
-      <div className="orb orb-3" />
+      <BallpitBackground
+        count={150}
+        colors={['#6366f1', '#a855f7', '#22d3ee', '#1e293b']}
+        gravity={0.3}
+        friction={0.998}
+        followCursor={true}
+      />
 
       <div className="section-container relative z-10 py-40 md:py-0">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-32">
@@ -145,9 +149,10 @@ export default function Hero() {
               />
               <div className="profile-ring">
                 <img
-                  src="https://media.licdn.com/dms/image/v2/D5603AQGwRVoDY_yPAw/profile-displayphoto-crop_800_800/B56ZmzDYN2I8AI-/0/1759645633321?e=1778112000&v=beta&t=WursgBr2n5skdlsaL40rRyEfb6A-s73cXFU0ajKMVro"
+                  src="/profile.jpg"
                   alt="Aman Kumar"
                   className="w-56 h-56 sm:w-72 sm:h-72 rounded-full object-cover relative z-10"
+                  style={{ objectPosition: 'center 20%' }}
                   loading="eager"
                 />
               </div>

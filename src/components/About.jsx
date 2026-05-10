@@ -24,7 +24,7 @@ export default function About() {
       id="about"
       ref={sectionRef}
       className="relative"
-      style={{ paddingTop: '8rem', paddingBottom: '6rem' }}
+      style={{ paddingTop: '3.5rem', paddingBottom: '3rem' }}
     >
       <div className="section-container relative z-10" ref={ref}>
         <motion.div style={{ opacity }}>
@@ -35,7 +35,7 @@ export default function About() {
         </motion.div>
 
         {/* Main Content — Clean 2-column */}
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start" style={{ marginTop: '4rem' }}>
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start" style={{ marginTop: '2.5rem' }}>
 
           {/* Left: Bio */}
           <motion.div
@@ -113,7 +113,7 @@ export default function About() {
         {/* Divider */}
         <div
           className="h-[1px] w-full"
-          style={{ marginTop: '4rem', background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)' }}
+          style={{ marginTop: '2.5rem', background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)' }}
         />
 
         {/* Tech Stack */}
