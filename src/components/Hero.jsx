@@ -152,7 +152,7 @@ export default function Hero() {
                   src="/profile.jpg"
                   alt="Aman Kumar"
                   className="w-56 h-56 sm:w-72 sm:h-72 rounded-full object-cover relative z-10"
-                  style={{ objectPosition: 'center 20%' }}
+                  style={{ objectPosition: 'center' }}
                   loading="eager"
                 />
               </div>
