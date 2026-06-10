@@ -47,11 +47,11 @@ export default function About() {
             <p className="text-xl text-text-secondary leading-relaxed" style={{ marginBottom: '1.5rem' }}>
               I'm <span className="text-white font-semibold">Aman Kumar</span>, a CS student at{' '}
               <span className="text-accent-primary font-medium">Galgotias University</span> (2027)
-              — focused on backend development, scalable systems, and clean architecture.
+              — focused on frontend development, responsive design, and interactive web experiences.
             </p>
 
             <p className="text-lg text-text-muted leading-relaxed" style={{ marginBottom: '2.5rem' }}>
-              I build with Java, Spring Boot, Node.js & MongoDB, and actively solve 500+ DSA
+              I build with HTML, CSS, JavaScript & React, and actively solve 500+ DSA
               problems across LeetCode, CodeChef & GFG.
             </p>
 
@@ -85,9 +85,9 @@ export default function About() {
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { title: 'Backend Systems', desc: 'Scalable server-side architecture with clean separation of concerns.', emoji: '⚙️' },
-                { title: 'API Design', desc: 'High-performance RESTful APIs optimized for speed and reliability.', emoji: '🔗' },
-                { title: 'System Design', desc: 'Breaking complex problems into elegant distributed solutions.', emoji: '🏗️' },
+                { title: 'UI Development', desc: 'Pixel-perfect, responsive interfaces with modern HTML & CSS.', emoji: '🎨' },
+                { title: 'Interactive Web', desc: 'Dynamic, engaging web experiences powered by vanilla JavaScript.', emoji: '⚡' },
+                { title: 'Responsive Design', desc: 'Mobile-first layouts that look great on every screen size.', emoji: '📱' },
                 { title: 'Problem Solving', desc: '500+ DSA problems solved across multiple competitive platforms.', emoji: '🧩' },
               ].map((card, i) => (
                 <motion.div

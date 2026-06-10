@@ -11,13 +11,13 @@ const projects = [
     description:
       'A production-grade quick-commerce aggregator that compares real-time product pricing across Blinkit, Zepto & Instamart — with pin-code-specific availability, a universal multi-platform cart, and Google-style auto-suggest search.',
     highlights: ['Real-time Scraping', 'Geo-fenced Pricing', 'Multi-platform Cart', 'Auto-suggest Search'],
-    tech: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Tailwind CSS'],
+    tech: ['React', 'Tailwind CSS', 'Node.js', 'MongoDB', 'Express.js'],
     github: null,
     live: null,
-    featured: true,
+    // featured: true,
     status: 'In Development',
     statusColor: '#22d3ee',
-    role: 'Full-Stack',
+    role: 'Full Stack',
     accent: '#22d3ee',
     accentSecondary: '#06b6d4',
     icon: <FiLayers />,
@@ -64,7 +64,7 @@ const otherProjects = [
     title: 'To-Do List',
     subtitle: 'Task Manager',
     description: 'A full-stack task management app with CRUD operations, persistent storage, and a clean responsive interface.',
-    tech: ['Java', 'HTML', 'Servlets'],
+    tech: ['HTML', 'CSS', 'JavaScript'],
     github: 'https://github.com/amanrazz07/To-Do-List',
     accent: '#6366f1',
     icon: <FiCode />,
@@ -133,10 +133,10 @@ function HeroCard({ project, inView }) {
         <div className="project-shimmer" style={{ '--accent': project.accent, '--accent2': project.accentSecondary }} />
 
         <div className="relative p-8 lg:p-12">
-          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-            {/* Left content */}
-            <div className="flex-1 min-w-0">
+            {/* Left content - Spans 7 columns on desktop */}
+            <div className="lg:col-span-7 min-w-0">
               {/* Status + Role row */}
               <div className="flex flex-wrap items-center gap-3" style={{ marginBottom: '1.5rem' }}>
                 <span
@@ -160,16 +160,6 @@ function HeroCard({ project, inView }) {
                 >
                   {project.role}
                 </span>
-                <span
-                  className="text-[11px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full"
-                  style={{
-                    background: 'rgba(99,102,241,0.08)',
-                    color: '#818cf8',
-                    border: '1px solid rgba(99,102,241,0.12)',
-                  }}
-                >
-                  Featured
-                </span>
               </div>
 
               {/* Title */}
@@ -180,42 +170,9 @@ function HeroCard({ project, inView }) {
               <p className="text-text-muted text-sm font-medium" style={{ marginBottom: '1.25rem' }}>{project.subtitle}</p>
 
               {/* Description */}
-              <p className="text-text-secondary text-[15px] leading-relaxed max-w-xl" style={{ marginBottom: '1.5rem' }}>
+              <p className="text-text-secondary text-[15px] leading-relaxed max-w-xl" style={{ marginBottom: '2rem' }}>
                 {project.description}
               </p>
-
-              {/* Highlight Chips */}
-              <div className="flex flex-wrap gap-2" style={{ marginBottom: '1.75rem' }}>
-                {project.highlights.map((h) => (
-                  <span
-                    key={h}
-                    className="px-3 py-1.5 rounded-lg text-xs font-semibold"
-                    style={{
-                      background: `${project.accent}08`,
-                      color: project.accent,
-                      border: `1px solid ${project.accent}15`,
-                    }}
-                  >
-                    {h}
-                  </span>
-                ))}
-              </div>
-
-              {/* Tech stack */}
-              <div className="flex flex-wrap gap-2" style={{ marginBottom: '1.75rem' }}>
-                {project.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="px-3 py-1.5 rounded-lg text-xs font-medium text-text-muted font-mono"
-                    style={{
-                      background: 'rgba(255,255,255,0.03)',
-                      border: '1px solid rgba(255,255,255,0.06)',
-                    }}
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
 
               {/* Links */}
               <div className="flex gap-4">
@@ -243,12 +200,55 @@ function HeroCard({ project, inView }) {
               </div>
             </div>
 
-            {/* Right — Big number + decorative */}
-            <div className="hidden lg:flex flex-col items-end justify-between flex-shrink-0" style={{ minWidth: '180px' }}>
-              <span className="font-black leading-none select-none" style={{ fontSize: '10rem', color: `${project.accent}06` }}>
+            {/* Right content - Spans 5 columns on desktop */}
+            <div className="lg:col-span-5 relative flex flex-col gap-6 lg:pl-6">
+              {/* Big watermark number */}
+              <span className="absolute -top-12 -right-4 font-black leading-none select-none pointer-events-none hidden lg:block" style={{ fontSize: '10rem', color: `${project.accent}05` }}>
                 01
               </span>
+
+              <div className="relative z-10">
+                <h4 className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: project.accent }}>
+                  Highlights
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.highlights.map((h) => (
+                    <span
+                      key={h}
+                      className="px-3 py-1.5 rounded-lg text-xs font-semibold"
+                      style={{
+                        background: `${project.accent}08`,
+                        color: project.accent,
+                        border: `1px solid ${project.accent}15`,
+                      }}
+                    >
+                      {h}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="relative z-10">
+                <h4 className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: project.accent }}>
+                  Technologies
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="px-3 py-1.5 rounded-lg text-xs font-medium text-text-muted font-mono"
+                      style={{
+                        background: 'rgba(255,255,255,0.03)',
+                        border: '1px solid rgba(255,255,255,0.06)',
+                      }}
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -309,107 +309,125 @@ function CompactFeaturedCard({ project, inView }) {
         <div className="project-shimmer" style={{ '--accent': project.accent, '--accent2': project.accentSecondary }} />
 
         <div className="relative p-8 lg:p-10">
-          {/* Status + Role */}
-          <div className="flex flex-wrap items-center gap-2" style={{ marginBottom: '1.25rem' }}>
-            <span
-              className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full"
-              style={{
-                background: `${project.statusColor}12`,
-                color: project.statusColor,
-                border: `1px solid ${project.statusColor}25`,
-              }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full" style={{ background: project.statusColor }} />
-              {project.status}
-            </span>
-            <span
-              className="text-[11px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full"
-              style={{
-                background: `${project.accent}10`,
-                color: project.accent,
-                border: `1px solid ${project.accent}20`,
-              }}
-            >
-              {project.role}
-            </span>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-          {/* Big number bg */}
-          <span
-            className="absolute top-6 right-8 font-black select-none"
-            style={{ fontSize: '6rem', lineHeight: 1, color: `${project.accent}05` }}
-          >
-            02
-          </span>
+            {/* Left content - Spans 7 columns on desktop */}
+            <div className="lg:col-span-7 min-w-0">
+              {/* Status + Role */}
+              <div className="flex flex-wrap items-center gap-2" style={{ marginBottom: '1.25rem' }}>
+                <span
+                  className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full"
+                  style={{
+                    background: `${project.statusColor}12`,
+                    color: project.statusColor,
+                    border: `1px solid ${project.statusColor}25`,
+                  }}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full" style={{ background: project.statusColor }} />
+                  {project.status}
+                </span>
+                <span
+                  className="text-[11px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full"
+                  style={{
+                    background: `${project.accent}10`,
+                    color: project.accent,
+                    border: `1px solid ${project.accent}20`,
+                  }}
+                >
+                  {project.role}
+                </span>
+              </div>
 
-          {/* Title */}
-          <div className="flex items-center gap-3" style={{ marginBottom: '0.35rem' }}>
-            <span className="text-xl" style={{ color: project.accent }}>{project.icon}</span>
-            <h3 className="text-2xl lg:text-3xl font-bold text-white">{project.title}</h3>
-          </div>
-          <p className="text-text-muted text-sm" style={{ marginBottom: '1rem' }}>{project.subtitle}</p>
+              {/* Title */}
+              <div className="flex items-center gap-3" style={{ marginBottom: '0.35rem' }}>
+                <span className="text-xl" style={{ color: project.accent }}>{project.icon}</span>
+                <h3 className="text-2xl lg:text-3xl font-bold text-white">{project.title}</h3>
+              </div>
+              <p className="text-text-muted text-sm" style={{ marginBottom: '1rem' }}>{project.subtitle}</p>
 
-          {/* Description */}
-          <p className="text-text-secondary text-sm leading-relaxed" style={{ marginBottom: '1.25rem' }}>
-            {project.description}
-          </p>
+              {/* Description */}
+              <p className="text-text-secondary text-sm leading-relaxed" style={{ marginBottom: '1.5rem' }}>
+                {project.description}
+              </p>
 
-          {/* Highlight chips */}
-          <div className="flex flex-wrap gap-2" style={{ marginBottom: '1.25rem' }}>
-            {project.highlights.map((h) => (
+              {/* Links */}
+              <div className="flex gap-3">
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-text-secondary hover:text-white transition-colors duration-200"
+                  >
+                    <FiGithub className="text-base" /> Source Code <FiArrowUpRight className="text-xs" />
+                  </a>
+                )}
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-medium transition-colors duration-200"
+                    style={{ color: project.accent }}
+                  >
+                    <FiExternalLink className="text-base" /> Live Demo
+                  </a>
+                )}
+              </div>
+            </div>
+
+            {/* Right content - Spans 5 columns on desktop */}
+            <div className="lg:col-span-5 relative flex flex-col gap-5 lg:pl-6">
+              {/* Big number bg */}
               <span
-                key={h}
-                className="px-2.5 py-1 rounded-lg text-[11px] font-semibold"
-                style={{
-                  background: `${project.accent}08`,
-                  color: project.accent,
-                  border: `1px solid ${project.accent}15`,
-                }}
+                className="absolute -top-12 -right-4 font-black select-none pointer-events-none hidden lg:block"
+                style={{ fontSize: '8rem', color: `${project.accent}04` }}
               >
-                {h}
+                02
               </span>
-            ))}
-          </div>
 
-          {/* Tech */}
-          <div className="flex flex-wrap gap-2" style={{ marginBottom: '1.5rem' }}>
-            {project.tech.map((t) => (
-              <span
-                key={t}
-                className="px-3 py-1 rounded-lg text-xs font-medium text-text-muted font-mono"
-                style={{
-                  background: 'rgba(255,255,255,0.03)',
-                  border: '1px solid rgba(255,255,255,0.05)',
-                }}
-              >
-                {t}
-              </span>
-            ))}
-          </div>
+              <div className="relative z-10">
+                <h4 className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: project.accent }}>
+                  Highlights
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.highlights.map((h) => (
+                    <span
+                      key={h}
+                      className="px-2.5 py-1 rounded-lg text-[11px] font-semibold"
+                      style={{
+                        background: `${project.accent}08`,
+                        color: project.accent,
+                        border: `1px solid ${project.accent}15`,
+                      }}
+                    >
+                      {h}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-          {/* Links */}
-          <div className="flex gap-3">
-            {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium text-text-secondary hover:text-white transition-colors duration-200"
-              >
-                <FiGithub className="text-base" /> Source Code <FiArrowUpRight className="text-xs" />
-              </a>
-            )}
-            {project.live && (
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium transition-colors duration-200"
-                style={{ color: project.accent }}
-              >
-                <FiExternalLink className="text-base" /> Live Demo
-              </a>
-            )}
+              <div className="relative z-10">
+                <h4 className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: project.accent }}>
+                  Technologies
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="px-3 py-1 rounded-lg text-xs font-medium text-text-muted font-mono"
+                      style={{
+                        background: 'rgba(255,255,255,0.03)',
+                        border: '1px solid rgba(255,255,255,0.05)',
+                      }}
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

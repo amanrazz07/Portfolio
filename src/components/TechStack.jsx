@@ -1,18 +1,17 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { FaJava, FaNodeJs, FaLinux } from 'react-icons/fa'
-import { SiSpringboot, SiExpress, SiMysql, SiMongodb } from 'react-icons/si'
-import { HiServer } from 'react-icons/hi'
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaGitAlt, FaFigma } from 'react-icons/fa'
+import { SiTailwindcss, SiVite } from 'react-icons/si'
 
 const allSkills = [
-  { name: 'Java', icon: <FaJava />, color: '#f89820' },
-  { name: 'Node.js', icon: <FaNodeJs />, color: '#68a063' },
-  { name: 'Spring Boot', icon: <SiSpringboot />, color: '#6db33f' },
-  { name: 'Express.js', icon: <SiExpress />, color: '#ffffff' },
-  { name: 'MySQL', icon: <SiMysql />, color: '#4479a1' },
-  { name: 'MongoDB', icon: <SiMongodb />, color: '#47a248' },
-  { name: 'Linux', icon: <FaLinux />, color: '#fcc624' },
-  { name: 'REST APIs', icon: <HiServer />, color: '#6366f1' },
+  { name: 'HTML', icon: <FaHtml5 />, color: '#e34f26' },
+  { name: 'CSS', icon: <FaCss3Alt />, color: '#1572b6' },
+  { name: 'JavaScript', icon: <FaJsSquare />, color: '#f7df1e' },
+  { name: 'React', icon: <FaReact />, color: '#61dafb' },
+  { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: '#06b6d4' },
+  { name: 'Vite', icon: <SiVite />, color: '#646cff' },
+  { name: 'Git', icon: <FaGitAlt />, color: '#f05032' },
+  { name: 'Figma', icon: <FaFigma />, color: '#a259ff' },
 ]
 
 export default function TechStack() {

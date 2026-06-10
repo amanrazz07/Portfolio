@@ -64,13 +64,13 @@ export default function Hero() {
             >
               <TypeAnimation
                 sequence={[
-                  'Backend Developer',
+                  'Frontend Developer',
                   2000,
-                  'System Designer',
+                  'UI/UX Enthusiast',
                   2000,
                   'Problem Solver',
                   2000,
-                  'API Architect',
+                  'Web Designer',
                   2000,
                 ]}
                 wrapper="span"
@@ -87,9 +87,9 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.7 }}
               className="text-text-muted text-lg sm:text-xl max-w-lg mx-auto lg:mx-0 mb-8 leading-normal"
             >
-              Building scalable and efficient backend systems. Passionate about
-              clean architecture, high-performance APIs, and solving complex
-              problems with elegant code.
+              Crafting beautiful and interactive web experiences. Passionate about
+              responsive design, pixel-perfect UI, and bringing creative ideas
+              to life with clean code.
             </motion.p>
 
             {/* Actions Group (Buttons + Socials) */}

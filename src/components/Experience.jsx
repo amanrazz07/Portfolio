@@ -10,7 +10,7 @@ const timeline = [
     title: 'B.Tech in Computer Science',
     org: 'Galgotias University, Greater Noida',
     period: '2023 — 2027',
-    description: 'Pursuing B.Tech CSE with focus on DSA, System Design, and Backend Development.',
+    description: 'Pursuing B.Tech CSE with focus on DSA, Web Development, and Frontend Engineering.',
     icon: <HiAcademicCap />,
   },
   {

@@ -37,7 +37,7 @@ export default function Footer() {
                 Aman Kumar
               </p>
               <p className="text-text-muted text-xs">
-                Backend Developer
+                Frontend Developer
               </p>
             </div>
           </div>
